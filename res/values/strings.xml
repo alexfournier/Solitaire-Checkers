@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Solitaire Checkers</string>
+    <string name="contentDescriptionNoPeg">NoPeg</string>
+    <string name="contentDescriptionPeg">Peg</string>
+    <string name="action_reset">Reset</string>
+	<string name="ok_button">OK</string>
+    <string name="dialogGameOver">Message from Solitaire Checkers</string>
+    
+    <string-array name="alt_boards">
+        <item>Solitaire</item>
+        <item>Arrow</item>
+        <item>Cross</item>
+        <item>Diamond</item>
+        <item>Double Arrow</item>
+        <item>Fireplace</item>
+        <item>Plus</item>
+        <item>Pyramid</item>
+    </string-array>
+
+</resources>

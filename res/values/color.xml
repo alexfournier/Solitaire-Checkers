@@ -1,0 +1,7 @@
+
+    <resources>
+        <color name="background">#008080</color>
+        <color name="multipleJumps">#FFFF00</color>
+        <color name="pegBackground">#8B94B2</color>
+        <color name="textColor">#FFF</color>
+    </resources>
