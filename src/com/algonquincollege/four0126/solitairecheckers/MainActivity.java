@@ -18,6 +18,7 @@ package com.algonquincollege.four0126.solitairecheckers;
 import java.util.Observable;
 import java.util.Observer;
 
+import model.SolitaireCheckersConstants;
 import model.SolitaireCheckersModel;
 
 import android.os.Bundle;
@@ -59,7 +60,6 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * setting the buttons and view items.
-	 * 
 	 * @param savedInstanceState
 	 */
 	@Override
@@ -79,15 +79,15 @@ public class MainActivity extends Activity implements Observer,
 		configuration.setOnItemSelectedListener(this);
 
 		progressBar.setMax(model.getNumberOfPegs());
+		
 		// synch the view with the model
 		this.updateView();
 	}
 
 	/**
 	 * checking for action options.
-	 * 
-	 * @param Menu
-	 *            menu
+	 * @param Menu menu
+	 * @return true
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -98,6 +98,11 @@ public class MainActivity extends Activity implements Observer,
 
 	// INSTANCE METHODS
 
+	/**
+	 * Create Dialog box. 
+	 * @param int id
+	 * @return dialog box
+	 */
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -122,9 +127,7 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * Event handling for Pegs
-	 * 
-	 * @param view
-	 *            v
+	 * @param view v
 	 */
 	public void handlePeg(View v) {
 		String name = getResources().getResourceEntryName(v.getId());
@@ -144,9 +147,7 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * Resetting the configuration
-	 * 
-	 * @param MenuIten
-	 *            item
+	 * @param MenuIten item
 	 */
 	public void handleReset(MenuItem item) {
 		model.reset();
@@ -154,10 +155,8 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * Set board configuration
-	 * 
 	 * @param parent
-	 * @param View
-	 *            view
+	 * @param View view
 	 * @param pos
 	 */
 	@Override
@@ -175,20 +174,19 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * No configuration selected ( NOOP )
-	 * 
 	 * @param parent
 	 */
 	@Override
 	public void onNothingSelected(AdapterView<?> parent) {
-		// NOOP
+		// NOOP No operation 
 	}
 
 	/**
 	 * Option Menu Selection
-	 * 
-	 * @param MenuItem
-	 *            item
+	 * @param MenuItem item
+	 * @return true if reset button was clicked
 	 */
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle item selection
 		switch (item.getItemId()) {
@@ -203,9 +201,9 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * Update view
-	 * 
 	 * @param obsevable
 	 * @param data
+	 * @see updateView()
 	 */
 	@Override
 	public void update(Observable observable, Object object) {
@@ -285,6 +283,9 @@ public class MainActivity extends Activity implements Observer,
 
 	/**
 	 * updateView: board, progressBar, win or loss
+	 * @see updateBoard()
+	 * @see updateProgress()
+	 * @see updateWinOrLose()
 	 */
 	public void updateView() {
 		this.updateBoard();
@@ -298,17 +299,17 @@ public class MainActivity extends Activity implements Observer,
 	private void updateWinOrLoss() {
 		if (model.isWonIdeal() == true) {
 			((AlertDialog) infoDialog)
-					.setMessage(SolitaireCheckersModel.DEFAULT_MESSAGE_WON_PERFECT);
+					.setMessage(SolitaireCheckersConstants.DEFAULT_MESSAGE_WON_PERFECT);
 			infoDialog.show();
 		}
 		if (model.isWon() == true) {
 			((AlertDialog) infoDialog)
-					.setMessage(SolitaireCheckersModel.DEFAULT_MESSAGE_WON);
+					.setMessage(SolitaireCheckersConstants.DEFAULT_MESSAGE_WON);
 			infoDialog.show();
 		}
 		if (model.isLost() == true) {
 			((AlertDialog) infoDialog)
-					.setMessage(SolitaireCheckersModel.DEFAULT_MESSAGE_LOST);
+					.setMessage(SolitaireCheckersConstants.DEFAULT_MESSAGE_LOST + " The game is lost :(");
 			infoDialog.show();
 		}
 	}
