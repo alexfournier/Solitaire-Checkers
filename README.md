@@ -3,12 +3,27 @@ Solitair Checkers Game
 
 Student Name                :  Alex Fournier               
 Email Address               :  four0126@algonquinlive.com  
-Student Number              :  040 597 732                 
-Student User ID             :  four0126                    
-Course Number               :  MAD9132                     
-Lab Section Number          :  Assignment 2                
-Professor Name              :  Gerry Hurdle                
-Assignment Name/Number/Date :  SolitaireCheckers/2/10-30-13
-Optional Comments           :                              
 
-java Assignment 2
+design, implement, test and deploy the game of solitaire checkers as an Android app to apply the MVC architecture
+
+to use various Android view objects:
+
+AlertDialog
+
+Button
+
+ImageButton
+
+Menu
+
+ProgressBar
+
+Spinner
+
+to use various object-oriented design patterns:
+
+Accessor / Mutator
+
+Observer / Observable
+
+to apply the Update / React Strategy
